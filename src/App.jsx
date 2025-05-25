@@ -56,8 +56,9 @@ function App() {
       !selectedStory ||
       Object.keys(selectedStory).length === 0 ||
       stories.length === 0
-    )
+    ) {
       return;
+    }
 
     timeout.current = setTimeout(() => {
       const nextStory = stories.find((story) => {
