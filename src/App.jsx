@@ -76,7 +76,9 @@ function App() {
 
   // next story
   const goToNextStory = useCallback(() => {
+    // clear prev timeout when story is changed manually
     clearTimeout(timeout.current);
+
     if (selectedStory.id === stories[stories.length - 1].id) {
       setSelectedStory(stories[stories.length - 1]);
       return;
@@ -91,7 +93,9 @@ function App() {
 
   // prev story
   const goToPrevStory = useCallback(() => {
+    // clear prev timeout when story is changed manually
     clearTimeout(timeout.current);
+
     if (selectedStory.id === stories[0].id) {
       setSelectedStory(stories[0]);
       return;
